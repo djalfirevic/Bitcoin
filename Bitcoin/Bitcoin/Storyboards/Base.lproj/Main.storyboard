@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rY8-Ra-gQU">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bitcoin-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Bitcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2z-VK-RtE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityTableViewCell" rowHeight="60" id="5Cw-0y-Xt5" customClass="CityTableViewCell" customModule="Bitcoin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Cw-0y-Xt5" id="hSJ-0f-bBX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADo-Pl-2Ht">
+                                                    <rect key="frame" x="20" y="19.5" width="310" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-YV-KY6">
+                                                    <rect key="frame" x="350" y="8" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="CwG-eT-E8f"/>
+                                                        <constraint firstAttribute="height" constant="44" id="O1H-kc-ipq"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ADo-Pl-2Ht" firstAttribute="centerY" secondItem="hSJ-0f-bBX" secondAttribute="centerY" id="F8D-bj-itM"/>
+                                                <constraint firstItem="2Ln-YV-KY6" firstAttribute="leading" secondItem="ADo-Pl-2Ht" secondAttribute="trailing" constant="20" id="KYG-ra-YDC"/>
+                                                <constraint firstItem="2Ln-YV-KY6" firstAttribute="centerY" secondItem="hSJ-0f-bBX" secondAttribute="centerY" id="Tdp-9a-KmF"/>
+                                                <constraint firstItem="ADo-Pl-2Ht" firstAttribute="leading" secondItem="hSJ-0f-bBX" secondAttribute="leading" constant="20" id="XnK-pj-Piy"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Ln-YV-KY6" secondAttribute="trailing" constant="20" id="lSu-EY-y0Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="ADo-Pl-2Ht" id="AEo-GQ-Ky5"/>
+                                            <outlet property="weatherIconImageView" destination="2Ln-YV-KY6" id="1EG-wr-hYq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5fO-xX-ydO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8BG-5K-w3t"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="S2z-VK-RtE" secondAttribute="bottom" id="MEc-HC-iGD"/>
+                            <constraint firstItem="S2z-VK-RtE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mfr-pW-zwc"/>
+                            <constraint firstAttribute="trailing" secondItem="S2z-VK-RtE" secondAttribute="trailing" id="WbK-Tg-fdc"/>
+                            <constraint firstItem="S2z-VK-RtE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZEO-zN-EHM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bitcoin" id="8hR-CK-Wha"/>
+                    <connections>
+                        <outlet property="tableView" destination="S2z-VK-RtE" id="Th8-F5-wPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="782.8125"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="AHm-PI-yRg">
+            <objects>
+                <viewController storyboardIdentifier="CityViewController" id="ol2-Tu-Hq3" customClass="CityViewController" customModule="Bitcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ru-xG-fUj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05L-qJ-cvH">
+                                <rect key="frame" x="167" y="437.5" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="05L-qJ-cvH" firstAttribute="centerX" secondItem="1ru-xG-fUj" secondAttribute="centerX" id="QdU-RQ-xs9"/>
+                            <constraint firstItem="05L-qJ-cvH" firstAttribute="centerY" secondItem="1ru-xG-fUj" secondAttribute="centerY" id="lfx-zB-oeU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZXZ-mo-nGi"/>
+                    </view>
+                    <connections>
+                        <outlet property="windLabel" destination="05L-qJ-cvH" id="Bd1-ee-8AM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jg4-SU-07e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720" y="783"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KcN-MK-rLZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rY8-Ra-gQU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="aOP-1q-ZLs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rWM-p5-wg2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xp0-ut-T21" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="782.8125"/>
+        </scene>
+    </scenes>
+</document>
