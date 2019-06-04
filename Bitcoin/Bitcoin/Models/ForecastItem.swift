@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct ForecastItem: Codable {
-    
+struct ForecastItem: Codable, CustomStringConvertible {
+	
     // MARK: - Properties
     var main: WeatherItem
     var weather: [Weather]
     var wind: Wind
+	var clouds: Clouds
+	var description: String {
+		return "Wind: \(wind.speed) speed\nClouds: \(clouds.all)"
+	}
     
 }

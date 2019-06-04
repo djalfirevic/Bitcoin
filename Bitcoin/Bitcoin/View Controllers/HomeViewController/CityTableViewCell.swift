@@ -17,7 +17,11 @@ class CityTableViewCell: UITableViewCell {
 		didSet {
 			guard let city = city else { return }
 			
-			cityLabel.text = city.name
+			if let forecast = city.forecastItem {
+				cityLabel.text = "\(city.name), \(forecast.main.temperature) F"
+			} else {
+				cityLabel.text = city.name
+			}
 			
 			if let imageUrl = city.imageUrl {
 				weatherIconImageView.loadImage(from: imageUrl)

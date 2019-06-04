@@ -21,6 +21,7 @@ class HomeViewViewModel {
 		return cities.count
 	}
 	var forecastDataFetched: (() -> Void)?
+	let dispatchGroup = DispatchGroup()
 	
 	// MARK: - Initializer
 	init() {
@@ -33,17 +34,14 @@ class HomeViewViewModel {
 		return cities[indexPath.row]
 	}
 	
-	func fetchForecast(for city: City) {
+	func fetchForecast(for city: City, completion: @escaping (() -> Void)) {
 		RESTManager.shared.GET(from: city.queryString) { [weak self] (_ response: ForecastItem?, _ error: Error?) in
 			if let forecast = response {
 				var newCity = city
 				newCity.forecastItem = forecast
+				self?.cities.replaceCity(newCity)
 				
-				if let index = self?.cities.firstIndex(where: {$0.name == city.name}) {
-					self?.cities[index] = newCity
-				}
-				
-				self?.forecastDataFetched?()
+				completion()
 			}
 		}
 	}
@@ -63,8 +61,16 @@ class HomeViewViewModel {
 	}
 	
 	private func fetchForecasts() {
-		cities.forEach {
-			fetchForecast(for: $0)
+		cities.forEach { [weak self] in
+			self?.dispatchGroup.enter()
+			
+			fetchForecast(for: $0, completion: {
+				self?.dispatchGroup.leave()
+			})
+		}
+		
+		dispatchGroup.notify(queue: .main) {
+			self.forecastDataFetched?()
 		}
 	}
 	

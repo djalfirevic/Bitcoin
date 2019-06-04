@@ -32,3 +32,13 @@ struct City {
 	}
 	
 }
+
+extension Array where Element == City {
+	
+	mutating func replaceCity(_ city: City) {
+		if let index = self.firstIndex(where: {$0.name == city.name}) {
+			self[index] = city
+		}
+	}
+	
+}

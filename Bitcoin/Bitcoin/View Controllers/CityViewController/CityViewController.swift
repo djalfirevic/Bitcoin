@@ -11,7 +11,7 @@ import UIKit
 class CityViewController: UIViewController {
 
 	// MARK: - Properties
-	@IBOutlet private weak var windLabel: UILabel!
+	@IBOutlet private weak var windCloudLabel: UILabel!
 	var city: City!
 	
 	// MARK: - View lifecycle
@@ -26,7 +26,7 @@ class CityViewController: UIViewController {
 		title = city.name
 		
 		if let forecast = city.forecastItem {
-			windLabel.text = "Wind: \(forecast.wind.speed) speed"
+			windCloudLabel.text = forecast.description
 		}
 	}
 

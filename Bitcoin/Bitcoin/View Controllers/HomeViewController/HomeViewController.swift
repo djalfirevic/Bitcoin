@@ -69,4 +69,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 		}
 	}
 	
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		cell.transform = CGAffineTransform(translationX: 0, y: 50)
+		cell.alpha = 0.0
+		
+		UIView.animate(withDuration: Animations.animationDuration.rawValue, delay: Animations.animationDelay.rawValue * Double(indexPath.row), options: [.curveEaseInOut], animations: {
+			cell.transform = CGAffineTransform(translationX: 0, y: 0)
+			cell.alpha = 1.0
+		})
+	}
+	
 }

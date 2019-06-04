@@ -30,6 +30,7 @@
 		C4A4459D22A57D470000E614 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4459C22A57D470000E614 /* Constants.swift */; };
 		C4A4459F22A57E2A0000E614 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4459E22A57E2A0000E614 /* LocationService.swift */; };
 		C4A445A022A58FC40000E614 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4459C22A57D470000E614 /* Constants.swift */; };
+		C4A445A222A642490000E614 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A445A122A642490000E614 /* Clouds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		C4A4459A22A57CE20000E614 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		C4A4459C22A57D470000E614 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4A4459E22A57E2A0000E614 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		C4A445A122A642490000E614 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				C4A4457622A575670000E614 /* Wind.swift */,
 				C4A4457822A575670000E614 /* WeatherItem.swift */,
 				C4A4457A22A575670000E614 /* Weather.swift */,
+				C4A445A122A642490000E614 /* Clouds.swift */,
 				C4A4457B22A575670000E614 /* ForecastItem.swift */,
 			);
 			path = Models;
@@ -389,6 +392,7 @@
 				C4A4459222A577500000E614 /* HomeViewViewModel.swift in Sources */,
 				C4A4459822A578910000E614 /* CityTableViewCell.swift in Sources */,
 				C4A4459B22A57CE20000E614 /* CityViewController.swift in Sources */,
+				C4A445A222A642490000E614 /* Clouds.swift in Sources */,
 				C4A4459F22A57E2A0000E614 /* LocationService.swift in Sources */,
 				C4A4459D22A57D470000E614 /* Constants.swift in Sources */,
 			);
